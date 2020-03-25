@@ -10,6 +10,8 @@ git cms-init
 
 ## MET 
 git cms-addpkg RecoMET/METFilters
+## Reco Tau for deep tau ids
+git cms-addpkg RecoTauTag/RecoTau
 
 #https://twiki.cern.ch/twiki/bin/view/CMS/EgammaPostRecoRecipes#102X
 git cms-merge-topic cms-egamma:PhotonIDValueMapSpeedup1029 
@@ -20,7 +22,8 @@ git checkout master
 cd -
 
 #For 2018 data-taking
-git clone -b 2018_102X https://github.com/varuns23/phoJetAnalysis.git
+git clone -b master https://github.com/msjithin/nTuplizer_2018.git
+
 
 scram b -j10
 ```
