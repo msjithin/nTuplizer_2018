@@ -143,6 +143,12 @@ process.tauGenJetsSelectorMuons = cms.EDFilter(
     select = cms.vstring('muon'),
     filter = cms.bool(False)
 )
+process.buildGenTaus = cms.Path(
+    process.tauGenJets
+    * process.tauGenJetsSelectorAllHadrons
+    * process.tauGenJetsSelectorElectrons
+    * process.tauGenJetsSelectorMuons
+)
 
 
 
@@ -173,6 +179,10 @@ process.phoJetNtuplizer.jetsAK4Token = cms.InputTag("selectedUpdatedPatJetsUpdat
 process.p = cms.Path(
     process.fullPatMetSequence *
     process.ecalBadCalibReducedMINIAODFilter *
+    process.tauGenJets *
+    #process.tauGenJetsSelectorAllHadrons *
+    #process.tauGenJetsSelectorElectrons *
+    #process.tauGenJetsSelectorMuons *
     process.egammaPostRecoSeq *
     process.rerunMvaIsolationSequence *
     getattr(process,updatedTauName) *

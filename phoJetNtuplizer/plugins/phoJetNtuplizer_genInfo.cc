@@ -170,6 +170,7 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
   std::vector<reco::GenJet> mTaus;
   if (tausHadronic.isValid()) { // Hadronic, electronic, and muonic are all run
     // together, so checking one should work for all
+    std::cout<<"tausHadronic.isValid()"<<endl;
     hTaus = *tausHadronic;
     eTaus = *tausElectronic;
     mTaus = *tausMuonic;
@@ -251,6 +252,7 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
       double closestDR_ETau = 999;
       double closestDR_MTau = 999;
       if ( hTaus.size() > 0 ) {
+	std::cout<<"hTaus.size() > 0"<<endl;
 	for (size_t j = 0; j != hTaus.size(); ++j) {
 	  for(size_t k=0; k < p->numberOfDaughters(); ++k) 
 	    {
@@ -261,6 +263,7 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
 	}
       }
       if ( eTaus.size() > 0 ) {
+	std::cout<<"   eTaus.size() > 0"<<endl;
 	for (size_t j = 0; j != eTaus.size(); ++j) {
 	  for(size_t k=0; k < p->numberOfDaughters(); ++k) {
             const reco::Candidate *dp = p->daughter(k);
@@ -270,6 +273,7 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
 	}
       }
       if ( mTaus.size() > 0 ) {
+	std::cout<<"   mTaus.size() > 0"<<endl;
 	for (size_t j = 0; j != mTaus.size(); ++j) {
 	  for(size_t k=0; k < p->numberOfDaughters(); ++k) {
             const reco::Candidate *dp = p->daughter(k);
@@ -283,18 +287,23 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
       // The first two codes are based off of matching to true electrons/muons
       double closestGetTau = TMath::Min(closestDR_ETau, closestDR_MTau);
       if (closestDR_HTau < closestGetTau) closestGetTau = closestDR_HTau;
+      std::cout<<"closestDR:"<<closestDR<<endl;
+      if(closestDR_ETau<2) std::cout<<"   closestDR_ETau:"<<closestDR_ETau<<endl;
+      if(closestDR_MTau<2) std::cout<<"   closestDR_MTau:"<<closestDR_MTau<<endl;
+      if(closestDR_HTau<2) std::cout<<"   closestDR_HTau:"<<closestDR_HTau<<endl;
+
       if (closestDR < closestGetTau) {
-	if (fabs(closestPID) == 11 && closest_pt > 8 && closest_statusFlags && closestDR < 0.2 ) genMatch2.push_back(1.0);
-	if (fabs(closestPID) == 13 && closest_pt > 8 && closest_statusFlags && closestDR < 0.2 ) genMatch2.push_back(2.0);
+	if (fabs(closestPID) == 11 && closest_pt > 8 && closest_statusFlags && closestDR < 0.2 ) {genMatch2.push_back(1.0); std::cout<<"genMatch2=1"<<endl;}
+	if (fabs(closestPID) == 13 && closest_pt > 8 && closest_statusFlags && closestDR < 0.2 ) {genMatch2.push_back(2.0);std::cout<<"genMatch2=2"<<endl;}
       }
       // Other codes based off of not matching previous 2 options
       // as closest gen particle, retruns based on closest rebuilt gen tau
-      else if (closestDR_ETau < 0.2 && closestDR_ETau < TMath::Min(closestDR_MTau, closestDR_HTau)) genMatch2.push_back(3.0);
-      else if (closestDR_MTau < 0.2 && closestDR_MTau < TMath::Min(closestDR_ETau, closestDR_HTau)) genMatch2.push_back(4.0);
-      else if (closestDR_HTau < 0.2 && closestDR_HTau < TMath::Min(closestDR_ETau, closestDR_MTau)) genMatch2.push_back(5.0);
-      else genMatch2.push_back(6.0);  // No match, return 6 for "fake tau"
-
-     ///////
+      else if (closestDR_ETau < 0.2 && closestDR_ETau < TMath::Min(closestDR_MTau, closestDR_HTau)) {genMatch2.push_back(3.0); std::cout<<"genMatch2=3"<<endl;}
+      else if (closestDR_MTau < 0.2 && closestDR_MTau < TMath::Min(closestDR_ETau, closestDR_HTau)) {genMatch2.push_back(4.0); std::cout<<"genMatch2=4"<<endl;}
+      else if (closestDR_HTau < 0.2 && closestDR_HTau < TMath::Min(closestDR_ETau, closestDR_MTau)) {genMatch2.push_back(5.0);std::cout<<"genMatch2=5"<<endl;}
+      else {genMatch2.push_back(6.0);}  // No match, return 6 for "fake tau"
+      
+      ///////
       
       UShort_t tmpStatusFlag = 0;
       if (ip->fromHardProcessFinalState())                setbit(tmpStatusFlag, 0);
