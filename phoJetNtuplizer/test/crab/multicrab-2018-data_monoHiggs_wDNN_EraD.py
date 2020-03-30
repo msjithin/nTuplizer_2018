@@ -36,7 +36,7 @@ from CRABClient.UserUtilities import config
 from multiprocessing import Process
 
 config = config()
-name = 'data2018_13Mar2020'
+name = 'data2018_27Mar2020'
 config.General.workArea = 'crab_'+name
 config.General.transferOutputs = True
 config.General.transferLogs = False

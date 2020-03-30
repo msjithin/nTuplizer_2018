@@ -1,0 +1,354 @@
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018A
+Task name:			200327_200047:jmadhusu_crab_job_EGamma2018A
+Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200047%3Ajmadhusu_crab_job_EGamma2018A
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200047%3Ajmadhusu_crab_job_EGamma2018A
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.1% (   6/4203)
+				idle         		 23.0% ( 967/4203)
+				running      		  8.8% ( 369/4203)
+				toRetry      		  0.1% (   4/4203)
+				transferring 		  1.0% (  43/4203)
+				unsubmitted  		 67.0% (2814/4203)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1740MB max, 1511MB ave
+ * Runtime: 0:00:00 min, 1:35:10 max, 1:13:45 ave
+ * CPU eff: 31% min, 97% max, 94% ave
+ * Waste: 0:23:34 (1% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018A/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018B
+Task name:			200327_200105:jmadhusu_crab_job_EGamma2018B
+Grid scheduler - Task Worker:	crab3@vocms0121.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200105%3Ajmadhusu_crab_job_EGamma2018B
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200105%3Ajmadhusu_crab_job_EGamma2018B
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    failed       		  0.0% (   1/2015)
+				finished     		  0.0% (   1/2015)
+				idle         		 43.6% ( 879/2015)
+				running      		 43.5% ( 877/2015)
+				toRetry      		  0.0% (   1/2015)
+				transferring 		  0.8% (  17/2015)
+				unsubmitted  		 11.9% ( 239/2015)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+   1 jobs failed with exit code 50660
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 2589MB max, 1458MB ave
+ * Runtime: 0:00:00 min, 1:31:47 max, 1:01:23 ave
+ * CPU eff: 28% min, 97% max, 94% ave
+ * Waste: 0:02:54 (0% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018B/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018C
+Task name:			200327_200124:jmadhusu_crab_job_EGamma2018C
+Grid scheduler - Task Worker:	crab3@vocms0199.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200124%3Ajmadhusu_crab_job_EGamma2018C
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200124%3Ajmadhusu_crab_job_EGamma2018C
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    failed       		  1.4% (  29/2016)
+				finished     		  0.2% (   4/2016)
+				idle         		 47.4% ( 955/2016)
+				running      		 26.6% ( 536/2016)
+				toRetry      		  0.1% (   3/2016)
+				transferring 		  1.1% (  22/2016)
+				unsubmitted  		 23.2% ( 467/2016)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  26 jobs failed with exit code 8001
+
+   3 jobs failed with exit code 8022
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1622MB max, 665MB ave
+ * Runtime: 0:00:00 min, 1:30:20 max, 0:30:36 ave
+ * CPU eff: 0% min, 97% max, 90% ave
+ * Waste: 2:12:29 (7% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018C/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018D
+Task name:			200327_200340:jmadhusu_crab_job_EGamma2018D
+Grid scheduler - Task Worker:	crab3@vocms0194.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200340%3Ajmadhusu_crab_job_EGamma2018D
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200340%3Ajmadhusu_crab_job_EGamma2018D
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.3% (  30/9649)
+				idle         		  9.8% ( 949/9649)
+				running      		  3.8% ( 365/9649)
+				toRetry      		  0.0% (   1/9649)
+				transferring 		  0.5% (  49/9649)
+				unsubmitted  		 85.6% (8255/9649)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1662MB max, 1333MB ave
+ * Runtime: 0:00:00 min, 1:07:55 max, 0:42:28 ave
+ * CPU eff: 12% min, 96% max, 91% ave
+ * Waste: 0:12:52 (0% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_EGamma2018D/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonA
+Task name:			200327_200147:jmadhusu_crab_job_SingleMuonA
+Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200147%3Ajmadhusu_crab_job_SingleMuonA
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200147%3Ajmadhusu_crab_job_SingleMuonA
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.6% (  26/4262)
+				idle         		 22.1% ( 944/4262)
+				running      		 17.6% ( 748/4262)
+				transferring 		  4.5% ( 193/4262)
+				unsubmitted  		 55.2% (2351/4262)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1833MB max, 1483MB ave
+ * Runtime: 0:00:00 min, 1:23:37 max, 0:58:17 ave
+ * CPU eff: 48% min, 97% max, 92% ave
+ * Waste: 0:39:23 (0% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonA/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonB
+Task name:			200327_200206:jmadhusu_crab_job_SingleMuonB
+Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200206%3Ajmadhusu_crab_job_SingleMuonB
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200206%3Ajmadhusu_crab_job_SingleMuonB
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    idle         		 45.8% ( 922/2015)
+				running      		  5.8% ( 117/2015)
+				unsubmitted  		 48.4% ( 976/2015)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonB/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonC
+Task name:			200327_200226:jmadhusu_crab_job_SingleMuonC
+Grid scheduler - Task Worker:	crab3@vocms0106.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200226%3Ajmadhusu_crab_job_SingleMuonC
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200226%3Ajmadhusu_crab_job_SingleMuonC
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    failed       		  2.6% (  52/2015)
+				finished     		  4.8% (  97/2015)
+				idle         		 48.4% ( 975/2015)
+				running      		 34.0% ( 685/2015)
+				toRetry      		  1.2% (  24/2015)
+				transferring 		  3.3% (  67/2015)
+				unsubmitted  		  5.7% ( 115/2015)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+  40 jobs failed with exit code 8001
+
+   3 jobs failed with exit code 7002
+
+   1 jobs failed with exit code 8022
+
+   1 jobs failed with exit code 8003
+
+   1 jobs failed with exit code 8002
+
+   1 jobs failed with exit code 65
+
+Could not find exit code details for 5 jobs.
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 2664MB max, 999MB ave
+ * Runtime: 0:00:00 min, 1:25:53 max, 0:34:28 ave
+ * CPU eff: 0% min, 97% max, 77% ave
+ * Waste: 2:13:58 (2% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonC/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonD
+Task name:			200327_200417:jmadhusu_crab_job_SingleMuonD
+Grid scheduler - Task Worker:	N/A yet - crab-prod-tw01
+Status on the CRAB server:	TAPERECALL
+PhEDEx request:			https://cmsweb.cern.ch/phedex/prod/Data::Subscriptions#state=filter%3D%2FSingleMuon%2FRun2018D-30Apr2019-v1%2FMINIAOD
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200417%3Ajmadhusu_crab_job_SingleMuonD
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200417%3Ajmadhusu_crab_job_SingleMuonD
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Warning:			Task could not be submitted because there is no DISK replica for dataset /SingleMuon/Run2018D-30Apr2019-v1/MINIAOD
+				N.B.: the input dataset is stored at T1_US_FNAL_Buffer, T1_US_FNAL_MSS, but those are TAPE locations.
+				A disk replica has been requested on 2020-03-27T20:05:51 UTC to CMS DDM (request ID: 46264)
+				This task will be automatically submitted as soon as the stage-out is completed.
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonD/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonD_PromptReco
+Task name:			200327_200359:jmadhusu_crab_job_SingleMuonD_PromptReco
+Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200359%3Ajmadhusu_crab_job_SingleMuonD_PromptReco
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200359%3Ajmadhusu_crab_job_SingleMuonD_PromptReco
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.7% (  70/9505)
+				idle         		 10.2% ( 974/9505)
+				running      		  0.6% (  57/9505)
+				transferring 		  0.4% (  36/9505)
+				unsubmitted  		 88.0% (8368/9505)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1473MB max, 1278MB ave
+ * Runtime: 0:00:00 min, 0:29:06 max, 0:15:47 ave
+ * CPU eff: 78% min, 96% max, 92% ave
+ * Waste: 0:15:08 (1% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_SingleMuonD_PromptReco/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauA
+Task name:			200327_200244:jmadhusu_crab_job_TauA
+Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200244%3Ajmadhusu_crab_job_TauA
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200244%3Ajmadhusu_crab_job_TauA
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  3.3% ( 141/4257)
+				idle         		 20.5% ( 873/4257)
+				running      		  2.3% (  98/4257)
+				transferring 		  2.7% ( 115/4257)
+				unsubmitted  		 71.2% (3030/4257)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1839MB max, 1620MB ave
+ * Runtime: 0:00:00 min, 0:57:06 max, 0:20:05 ave
+ * CPU eff: 76% min, 97% max, 94% ave
+ * Waste: 0:36:07 (1% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauA/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauB
+Task name:			200327_200303:jmadhusu_crab_job_TauB
+Grid scheduler - Task Worker:	crab3@vocms0144.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200303%3Ajmadhusu_crab_job_TauB
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200303%3Ajmadhusu_crab_job_TauB
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.3% (   7/2016)
+				idle         		 46.2% ( 931/2016)
+				running      		  0.7% (  15/2016)
+				transferring 		  0.4% (   8/2016)
+				unsubmitted  		 52.3% (1055/2016)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1599MB max, 1399MB ave
+ * Runtime: 0:00:00 min, 1:00:57 max, 0:39:54 ave
+ * CPU eff: 48% min, 84% max, 61% ave
+ * Waste: 0:02:10 (0% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauB/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauC
+Task name:			200327_200321:jmadhusu_crab_job_TauC
+Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200321%3Ajmadhusu_crab_job_TauC
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200321%3Ajmadhusu_crab_job_TauC
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		 11.1% ( 223/2016)
+				idle         		 49.2% ( 991/2016)
+				running      		 18.1% ( 364/2016)
+				transferring 		  4.0% (  80/2016)
+				unsubmitted  		 17.8% ( 358/2016)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1846MB max, 1378MB ave
+ * Runtime: 0:00:00 min, 1:31:29 max, 0:35:29 ave
+ * CPU eff: 37% min, 97% max, 76% ave
+ * Waste: 4:56:32 (3% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauC/crab.log
+CRAB project directory:		/afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauD_PromptReco
+Task name:			200327_200435:jmadhusu_crab_job_TauD_PromptReco
+Grid scheduler - Task Worker:	crab3@vocms0196.cern.ch - crab-prod-tw01
+Status on the CRAB server:	SUBMITTED
+Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/200327_200435%3Ajmadhusu_crab_job_TauD_PromptReco
+Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=jmadhusu&var-task=200327_200435%3Ajmadhusu_crab_job_TauD_PromptReco
+In case of issues with the dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+Status on the scheduler:	SUBMITTED
+
+Jobs status:                    finished     		  0.9% (  88/9624)
+				idle         		 10.9% (1053/9624)
+				running      		  0.9% (  90/9624)
+				transferring 		  0.2% (  20/9624)
+				unsubmitted  		 87.0% (8373/9624)
+
+No publication information (publication has been disabled in the CRAB configuration file)
+
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+
+Summary of run jobs:
+ * Memory: 0MB min, 1450MB max, 1228MB ave
+ * Runtime: 0:00:00 min, 0:54:50 max, 0:20:58 ave
+ * CPU eff: 25% min, 93% max, 73% ave
+ * Waste: 0:55:25 (2% of total)
+
+Log file is /afs/hep.wisc.edu/user/ms/monoHiggs_2018_wDnn/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_data2018_27Mar2020/crab_job_TauD_PromptReco/crab.log
