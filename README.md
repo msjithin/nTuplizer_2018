@@ -22,7 +22,7 @@ git checkout master
 cd -
 
 #For 2018 data-taking
-git clone -b master https://github.com/msjithin/nTuplizer_2018.git
+git clone -b updated_trg https://github.com/msjithin/nTuplizer_2018.git
 
 
 scram b -j10
