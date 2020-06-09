@@ -209,8 +209,10 @@ void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSe
     else if (name.find("HLT_Mu12_DoublePhoton20_v")                                  != string::npos) bitEleMuX = 58;
     else if (name.find("HLT_Ele32_WPTight_v")                                        != string::npos) bitEleMuX = 59;
     else if (name.find("HLT_IsoMu24_v")                                              != string::npos) bitEleMuX = 60;
-    else if (name.find("HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v")        != string::npos) bitEleMuX = 61;
-
+    else if (name.find("HLT_Ele32_WPTight_Gsf_v")                                    != string::npos) bitEleMuX = 61;
+    else if (name.find("HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v")        != string::npos) bitEleMuX = 62;
+    
+    
     // Photon triggers
     int bitPho    = -1;
     if      (name.find("HLT_Photon22_v")                    != string::npos) bitPho =  0; //bit0(lowest)
@@ -263,18 +265,20 @@ void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSe
     else if (name.find("HLT_TightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1")         != string::npos) bitTau =  2;
     else if (name.find("HLT_MediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_CrossL1")        != string::npos) bitTau =  3;
     else if (name.find("HLT_TightChargedIsoPFTau40_Trk1_eta2p1_Reg_CrossL1")                 != string::npos) bitTau =  4;
-    else if (name.find("HLT_DoubleMediumChargedIsoPFTauHPS35_Trk1_eta2p1_Reg_v")             != string::npos){ bitTau =  5; }
-    else if (name.find("HLT_DoubleMediumChargedIsoPFTauHPS35_Trk1_TightID_eta2p1_Reg_v")     != string::npos){ bitTau =  6; }
-    else if (name.find("HLT_DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1_Reg_v")             != string::npos){ bitTau =  7; }
-    else if (name.find("HLT_DoubleMediumChargedIsoPFTauHPS40_Trk1_TightID_eta2p1_Reg_v")     != string::npos){ bitTau =  8; }
-    else if (name.find("HLT_DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1_Reg_v")              != string::npos){ bitTau =  9; }
-    else if (name.find("HLT_DoubleTightChargedIsoPFTauHPS35_Trk1_TightID_eta2p1_Reg_v")      != string::npos){ bitTau =  10;}
-    else if (name.find("HLT_DoubleTightChargedIsoPFTauHPS40_Trk1_eta2p1_Reg_v")              != string::npos){ bitTau =  11;}
-    else if (name.find("HLT_DoubleTightChargedIsoPFTauHPS40_Trk1_TightID_eta2p1_Reg_v")      != string::npos){ bitTau =  12;}
-    else if (name.find("HLT_IsoMu20_eta2p1_LooseChargedIsoPFTauHPS27_eta2p1_CrossL1_v")                        != string::npos) bitTau =  13;
-    else if (name.find("HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTauHPS30_eta2p1_CrossL1_v")              != string::npos) bitTau =  14;
-    else if (name.find("HLT_IsoMu20_eta2p1_LooseChargedIsoPFTauHPS27_eta2p1_TightID_CrossL1_v")                != string::npos) bitTau =  15;
-    else if (name.find("HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTauHPS30_eta2p1_TightID_CrossL1_v")      != string::npos) bitTau =  16;
+    else if (name.find("HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v")         != string::npos) bitTau =  5;
+    else if (name.find("HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v")        != string::npos) bitTau =  6;
+    else if (name.find("HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v")                 != string::npos) bitTau =  7;
+    else if (name.find("HLT_IsoMu20_eta2p1_LooseChargedIso_PFTau27_eta2p1_CrossL1_v")                 != string::npos) bitTau =  8;
+    else if (name.find("HLT_Ele24_eta2p1_WPTight_Gsf_Loose_ChargedIsoPFTau30_eta2p1_CrossL1_v")       != string::npos) bitTau =  9;
+    else if (name.find("HLT_DoubleMedium_ChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  10;
+    else if (name.find("HLT_DoubleTight_ChargedIsoPFTau40_Trk1_eta2p1_Reg_v")                != string::npos) bitTau =  11;
+    else if (name.find("HLT_DoubleTight_ChargedIsoPF_Tau35_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  12;
+    else if (name.find("HLT_IsoMu20_eta2p1_LooseChargedIsoPFTauHPS27_eta2p1_CrossL1_v")                   != string::npos) bitTau =  13;
+    else if (name.find("HLT_IsoMu20_eta2p1_LooseChargedIsoPFTauHPS27_eta2p1_TightID_CrossL1_v")           != string::npos) bitTau =  14;
+    else if (name.find("HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTauHPS30_eta2p1_CrossL1_v")         != string::npos) bitTau =  15;
+    else if (name.find("HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTauHPS30_eta2p1_TightID_CrossL1_v") != string::npos) bitTau =  16;
+    else if (name.find("HLT_DoubleTightChargedIsoPFTauHPS40_Trk1_eta2p1_Reg_v")                           != string::npos) bitTau =  17;
+
 
     // MET triggers
     int bitMet = -1;
@@ -293,7 +297,7 @@ void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSe
     else if (name.find("HLT_PFMETTypeOne130_PFMHT130_IDTight_v")         != string::npos) bitMet = 12;
     else if (name.find("HLT_PFMETTypeOne140_PFMHT140_IDTight_v")         != string::npos) bitMet = 13;
     else if (name.find("HLT_PFMETTypeOne200_HBHE_BeamHaloCleaned_v")     != string::npos) bitMet = 14;
-    
+
 
     //Jet triggers
     int bitJet    = -1;

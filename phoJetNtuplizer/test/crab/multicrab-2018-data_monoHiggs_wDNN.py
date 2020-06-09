@@ -36,7 +36,7 @@ from CRABClient.UserUtilities import config
 from multiprocessing import Process
 
 config = config()
-name = 'data2018_27Mar2020'
+name = 'data2018_09Jun2020'
 config.General.workArea = 'crab_'+name
 config.General.transferOutputs = True
 config.General.transferLogs = False
@@ -56,7 +56,7 @@ config.Site.storageSite = 'T2_US_Wisconsin'
 #config.Site.blacklist = ['T2_CH_CERN']
 
 #listOfSamples = ['MET2018A', 'MET2018B', 'MET2018C']
-listOfSamples = ['EGamma2018A', 'EGamma2018B', 'EGamma2018C', 'SingleMuonA', 'SingleMuonB', 'SingleMuonC', 'TauA', 'TauB', 'TauC', 'EGamma2018D', 'SingleMuonD_PromptReco', 'SingleMuonD', 'TauD_PromptReco']
+listOfSamples = ['EGamma2018A', 'EGamma2018B', 'EGamma2018C', 'SingleMuonA', 'SingleMuonB', 'SingleMuonC', 'TauA', 'TauB', 'TauC', 'EGamma2018D' 'SingleMuonD']
 
 
 for sample in listOfSamples:  

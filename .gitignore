@@ -5,6 +5,8 @@ __init__.py
 .*.swp
 **/*~
 **/*#
+._*
+*.out
 
 
 run_102X_data2018_*.py

@@ -15,7 +15,6 @@ vector<float>  tau_Mass_;
 vector<float>  tau_Dxy_;
 vector<float>  tau_ZImpact_;
 vector<int>    tau_decayModeFindingNewDMs_;
-
 //Tau Ingredients
 vector<float>  tau_byCombinedIsolationDeltaBetaCorrRaw3Hits_;
 vector<float>  tau_chargedIsoPtSum_;
@@ -41,7 +40,6 @@ vector<float>  tau_LeadChargedHadron_dxy_;
 
 vector<UInt_t> tau_IDbits_;
 vector<float>  tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_;
-
 // tau DNN-based ID
 vector<float>  tau_byVVVLooseDeepTau2017v2p1VSjet_;
 vector<float>  tau_byVVLooseDeepTau2017v2p1VSjet_;
@@ -67,14 +65,9 @@ vector<float>  tau_byVLooseDeepTau2017v2p1VSmu_;
 vector<float>  tau_byLooseDeepTau2017v2p1VSmu_;
 vector<float>  tau_byMediumDeepTau2017v2p1VSmu_;
 vector<float>  tau_byTightDeepTau2017v2p1VSmu_;
-//vector<float>  tau_byVTightDeepTau2017v2p1VSmu_;
-//vector<float>  tau_byVVTightDeepTau2017v2p1VSmu_;
 
-//vector<float>  tau_byTightDpfTau2016v0VSall_;
-//vector<float>  tau_byDpfTau2016v0VSallraw_;
-//vector<float>  tau_byTightDpfTau2016v1VSall_;
-//vector<float>  tau_byDpfTau2016v1VSallraw_;
-
+vector<ULong64_t> tauFiredTrgs_;
+vector<ULong64_t> tauFiredL1Trgs_;
 
 
 void phoJetNtuplizer::branchTaus (TTree* tree){
@@ -87,7 +80,7 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   tree->Branch("tau_Phi",       &tau_Phi_);
   tree->Branch("tau_Charge",    &tau_Charge_);
   tree->Branch("tau_DecayMode", &tau_DecayMode_);
-  tree->Branch("tau_decayModeFindingNewDMs", &tau_decayModeFindingNewDMs_);
+  tree->Branch("tau_decayModeFindingNewDMs", &tau_decayModeFindingNewDMs_); 
   tree->Branch("tau_P",         &tau_P_);
   tree->Branch("tau_Vz",        &tau_Vz_);
   tree->Branch("tau_Energy",    &tau_Energy_);
@@ -121,7 +114,6 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   //Tau Id & Isolation
   tree->Branch("tau_IDbits",                                            &tau_IDbits_);
   tree->Branch("tau_byIsolationMVArun2017v2DBoldDMwLTraw2017",          &tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_);
-
   // tau DNN-based ID
   tree->Branch("tau_byVVVLooseDeepTau2017v2p1VSjet",    &tau_byVVVLooseDeepTau2017v2p1VSjet_);
   tree->Branch("tau_byVVLooseDeepTau2017v2p1VSjet",     &tau_byVVLooseDeepTau2017v2p1VSjet_);  
@@ -147,17 +139,9 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   tree->Branch("tau_byLooseDeepTau2017v2p1VSmu",       &tau_byLooseDeepTau2017v2p1VSmu_);  
   tree->Branch("tau_byMediumDeepTau2017v2p1VSmu",      &tau_byMediumDeepTau2017v2p1VSmu_);  
   tree->Branch("tau_byTightDeepTau2017v2p1VSmu",       &tau_byTightDeepTau2017v2p1VSmu_);  
-  //tree->Branch("tau_byVTightDeepTau2017v2p1VSmu",      &tau_byVTightDeepTau2017v2p1VSmu_);  
-  //tree->Branch("tau_byVVTightDeepTau2017v2p1VSmu",     &tau_byVVTightDeepTau2017v2p1VSmu_);  
-
-  //tree->Branch("tau_byTightDpfTau2016v0VSall",        &tau_byTightDpfTau2016v0VSall_);
-  //tree->Branch("tau_byDpfTau2016v0VSallraw",          &tau_byDpfTau2016v0VSallraw_);     
-  //tree->Branch("tau_byTightDpfTau2016v1VSall",        &tau_byTightDpfTau2016v1VSall_);     
-  //tree->Branch("tau_byDpfTau2016v1VSallraw",          &tau_byDpfTau2016v1VSallraw_);     
-
   
-
-
+  tree->Branch("tauFiredTrgs", &tauFiredTrgs_);
+  tree->Branch("tauFiredL1Trgs", &tauFiredL1Trgs_);
 }
 
 
@@ -182,14 +166,15 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
     tau_Phi_           .push_back(itau->phi());
     tau_Charge_        .push_back(itau->charge());
     tau_DecayMode_     .push_back(itau->decayMode());
-    tau_decayModeFindingNewDMs_.push_back(itau->tauID("decayModeFindingNewDMs"));
+    tau_decayModeFindingNewDMs_.push_back(itau->tauID("decayModeFindingNewDMs")); 
     tau_P_             .push_back(itau->p());
     tau_Vz_            .push_back(itau->vz());
     tau_Energy_        .push_back(itau->energy() );
     tau_Mass_          .push_back(itau->mass());
     tau_Dxy_           .push_back(itau->dxy() );
     tau_ZImpact_       .push_back(itau->vertex().z() + 130./tan(itau->theta()));
-
+    tauFiredTrgs_  .push_back(matchTauTriggerFilters(itau->pt(), itau->eta(), itau->phi()));
+    tauFiredL1Trgs_.push_back(matchL1TriggerFilters(itau->pt(), itau->eta(), itau->phi()));
     // Tau Ingredients
     tau_byCombinedIsolationDeltaBetaCorrRaw3Hits_    .push_back(itau->tauID("byCombinedIsolationDeltaBetaCorrRaw3Hits"));
     tau_chargedIsoPtSum_                             .push_back(itau->tauID("chargedIsoPtSum") );
@@ -270,15 +255,10 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
     bool isVVTightIsolation           = itau->tauID("byVVTightIsolationMVArun2017v2DBoldDMwLT2017");
     if (isVVTightIsolation)  setbit(tmpIDbits_, 18);
 
-    bool isAgainstElectronVLooseMVA62018   = itau->tauID("againstElectronVLooseMVA62018");
-    if (isAgainstElectronVLooseMVA62018)  setbit(tmpIDbits_, 19);
-
-
-
     tau_IDbits_               .push_back(tmpIDbits_);
 
     tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_          .push_back(itau->tauID("byIsolationMVArun2017v2DBoldDMwLTraw2017"));
-    
+
     // tau DNN-based ID
     tau_byVVVLooseDeepTau2017v2p1VSjet_                   .push_back(itau->tauID("byVVVLooseDeepTau2017v2p1VSjet"));
     tau_byVVLooseDeepTau2017v2p1VSjet_                    .push_back(itau->tauID("byVVLooseDeepTau2017v2p1VSjet"));
@@ -304,15 +284,7 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
     tau_byLooseDeepTau2017v2p1VSmu_                       .push_back(itau->tauID("byLooseDeepTau2017v2p1VSmu"));
     tau_byMediumDeepTau2017v2p1VSmu_                      .push_back(itau->tauID("byMediumDeepTau2017v2p1VSmu"));
     tau_byTightDeepTau2017v2p1VSmu_                       .push_back(itau->tauID("byTightDeepTau2017v2p1VSmu"));
-    //tau_byVTightDeepTau2017v2p1VSmu_                      .push_back(itau->tauID("byVTightDeepTau2017v2p1VSmu"));
-    //tau_byVVTightDeepTau2017v2p1VSmu_                     .push_back(itau->tauID("byVVTightDeepTau2017v2p1VSmu"));
-    
-    //tau_byTightDpfTau2016v0VSall_                       .push_back(itau->tauID("byTightDpfTau2016v0VSall"));
-    //tau_byDpfTau2016v0VSallraw_                         .push_back(itau->tauID("byDpfTau2016v0VSallraw"));
-    //tau_byTightDpfTau2016v1VSall_                       .push_back(itau->tauID("byTightDpfTau2016v1VSall"));
-    //tau_byDpfTau2016v1VSallraw_                         .push_back(itau->tauID("byDpfTau2016v1VSallraw"));
-    
-    
+
     ++nTau_;
 
   } // loop over tau candidates
@@ -329,7 +301,7 @@ void phoJetNtuplizer::initTaus(){
   tau_Et_                                             .clear();
   tau_Charge_                                         .clear();
   tau_DecayMode_                                      .clear();
-  tau_decayModeFindingNewDMs_                         .clear();    
+  tau_decayModeFindingNewDMs_                         .clear();  
   tau_P_                                              .clear();
   tau_Vz_                                             .clear();
   tau_Energy_                                         .clear();
@@ -359,9 +331,10 @@ void phoJetNtuplizer::initTaus(){
   tau_LeadChargedHadron_dz_                           .clear();
   tau_LeadChargedHadron_dxy_                          .clear();
 
+
   tau_IDbits_                                         .clear();
   tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_       .clear();
-  
+
   // tau DNN-based ID
   tau_byVVVLooseDeepTau2017v2p1VSjet_                   .clear();
   tau_byVVLooseDeepTau2017v2p1VSjet_                    .clear();
@@ -387,15 +360,6 @@ void phoJetNtuplizer::initTaus(){
   tau_byLooseDeepTau2017v2p1VSmu_                       .clear();
   tau_byMediumDeepTau2017v2p1VSmu_                      .clear();
   tau_byTightDeepTau2017v2p1VSmu_                       .clear();
-  //tau_byVTightDeepTau2017v2p1VSmu_                      .clear();
-  //tau_byVVTightDeepTau2017v2p1VSmu_                     .clear();
-
-  //tau_byTightDpfTau2016v0VSall_                       .clear();
-  //tau_byDpfTau2016v0VSallraw_                         .clear();
-  //tau_byTightDpfTau2016v1VSall_                       .clear();
-  //tau_byDpfTau2016v1VSallraw_                         .clear();
-
-
-
-
+  tauFiredTrgs_           .clear();
+  tauFiredL1Trgs_         .clear();
 }

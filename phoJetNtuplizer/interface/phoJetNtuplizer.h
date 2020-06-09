@@ -85,6 +85,7 @@ class phoJetNtuplizer : public edm::one::EDAnalyzer<edm::one::SharedResources>{
     ULong64_t matchDoublePhotonTriggerFilters(double pt, double eta, double phi);
     ULong64_t matchTriplePhotonTriggerFilters(double pt, double eta, double phi);
     ULong64_t matchMuonTriggerFilters(double pt, double eta, double phi);
+    ULong64_t matchTauTriggerFilters(double pt, double eta, double phi);
     ULong64_t matchJetTriggerFilters(double pt, double eta, double phi);
     ULong64_t matchL1TriggerFilters(double pt, double eta, double phi);
     Double_t deltaPhi(Double_t phi1, Double_t phi2);

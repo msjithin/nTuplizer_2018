@@ -1,6 +1,0 @@
-crab_job_DY1JetsToLL
-jmadhusu_crab_job_DYJetsToLL
-jmadhusu_crab_job_ST_t-channel_top
-crab_job_TTToHadronic_powheg
-crab_job_TTToSemiLeptonic_powheg
-ggZH_HToTauTau_ZToQQ

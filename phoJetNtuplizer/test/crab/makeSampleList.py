@@ -3,20 +3,37 @@ import os
 
 fileIn = open('mc_sample_dict', 'r') 
 count = 0
-fileOut=open('mc_sample_list', 'w')  
-sampleName=""
-sampleList=[]
+#fileOut=open('mc_sample_list', 'w')  
+datasetName=""
+datasetList=[]
 for line in fileIn:
     count += 1
-    sampleName=line.split(' ')[0]
-    #print(sampleName)
-    sampleName = sampleName[1:-1]
-    sampleList.append(sampleName)
+    datasetName=line.split(' ')[-1]
+    #print(datasetName)
+    datasetName = datasetName.replace(':','')
+    datasetName = datasetName.replace('\'','')
+    datasetName = datasetName.replace(',','')
+    datasetName = datasetName.replace('\n','')
+    datasetList.append(datasetName)
     
-#print(sampleList)
-#fileOut.write(str(sampleList))
-sampleList=sorted(sampleList)
-for i in sampleList:
-    fileOut.write(str(i)+'\n')
-fileOut.close()
-fileIn.close()
+datasetList=sorted(datasetList)
+
+
+rstr='[ '
+count=0
+for line in fileIn:
+    line=line.strip('\n')
+    sampleName=line.split(':')[0].strip(' ')
+    print(sampleName)
+    rstr = rstr+sampleName+", "
+    #count+=1
+    #print(rstr)
+    #write_obj.write(rstr)
+rstr = rstr+"] "
+print(rstr)
+
+with open('mc_sample_list','w') as write_obj: 
+    write_obj.write(rstr)   
+    for i in datasetList:
+        write_obj.write(str(i)+'\n')
+

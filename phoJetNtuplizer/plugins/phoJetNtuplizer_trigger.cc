@@ -13,6 +13,7 @@ vector<float> trgSinglePhoPt[64], trgSinglePhoEta[64], trgSinglePhoPhi[64];
 vector<float> trgDoublePhoPt[64], trgDoublePhoEta[64], trgDoublePhoPhi[64];
 vector<float> trgTriplePhoPt[64], trgTriplePhoEta[64], trgTriplePhoPhi[64];
 vector<float> trgMuPt[64],  trgMuEta[64],  trgMuPhi[64];
+vector<float> trgTauPt[64],  trgTauEta[64],  trgTauPhi[64];
 vector<float> trgJetPt[64], trgJetEta[64], trgJetPhi[64];
 vector<float> trgL1Eta[64],  trgL1Phi[64];
 
@@ -39,6 +40,9 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
     trgMuPt  [i].clear();
     trgMuEta [i].clear();
     trgMuPhi [i].clear();
+    trgTauPt  [i].clear();
+    trgTauEta [i].clear();
+    trgTauPhi [i].clear();
     trgJetPt [i].clear();
     trgJetEta[i].clear();
     trgJetPhi[i].clear();
@@ -53,6 +57,7 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
   static std::map<string,size_t> phoDoubleFilters;
   static std::map<string,size_t> phoTripleFilters;
   static std::map<string,size_t> muFilters;
+  static std::map<string,size_t> tauFilters;
   static std::map<string,size_t> jetFilters;
   static std::map<string,size_t> l1Filters;
 
@@ -129,6 +134,31 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
     eleSingleFilters["hltMu8Ele12DZFilter"] = 37;
     //HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v
     eleSingleFilters["hltMu12TrkIsoVVLEle23CaloIdLTrackIdLIsoVLElectronlegTrackIsoFilter"] = 38;
+    ///// added from FSA
+    eleSingleFilters["hltEle15CaloIdVTTrkIdTCaloIsoTTrkIsoTTrackIsolFilter"] = 39;
+    eleSingleFilters["hltEle15CaloIdVTCaloIsoTTrkIdTTrkIsoTTrackIsoFilter"] = 40;
+    eleSingleFilters["hltEle18CaloIdVTCaloIsoTTrkIdTTrkIsoTTrackIsoFilter"] = 41;
+    eleSingleFilters["hltOverlapFilterIsoEle15IsoPFTau20"] = 42;
+    eleSingleFilters["hltOverlapFilterIsoEle15IsoPFTau15"] = 43;
+    eleSingleFilters["hltOverlapFilterIsoEle15TightIsoPFTau20"] = 44;
+    eleSingleFilters["hltOverlapFilterIsoEle18MediumIsoPFTau20"] = 45;
+    eleSingleFilters["hltEle17CaloIdVTCaloIsoVTTrkIdTTrkIsoVTSC8TrackIsolFilter"] = 46;
+    eleSingleFilters["hltEle17CaloIdVTCaloIsoVTTrkIdTTrkIsoVTEle8TrackIsolFilter"] = 47;
+    eleSingleFilters["hltEle17TightIdLooseIsoEle8TightIdLooseIsoTrackIsolFilter"] = 48;
+    eleSingleFilters["hltEle17TightIdLooseIsoEle8TightIdLooseIsoTrackIsolDoubleFilter"] = 49;
+    eleSingleFilters["hltEle20CaloIdVTCaloIsoTTrkIdTTrkIsoTTrackIsoFilterL1SingleEG18orL1SingleEG20"] = 50;
+    eleSingleFilters["hltEle32CaloIdTCaloIsoTTrkIdTTrkIsoTTrackIsoFilter"] = 51;
+    eleSingleFilters["hltEle32CaloIdVTCaloIsoTTrkIdTTrkIsoTTrackIsoFilter"] = 52;
+    eleSingleFilters["hltOverlapFilterIsoEle18TightIsoPFTau20"] = 53;
+    eleSingleFilters["hltOverlapFilterIsoEle18IsoPFTau20"] = 54;
+    eleSingleFilters["hltOverlapFilterIsoEle20MediumIsoPFTau20"] = 55;
+    //////
+
+
+
+
+
+
 
     //Double electron triggers
     //HLT_DoubleEle24_22_eta2p1_WPLoose_Gsf_v
@@ -148,7 +178,20 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
     eleDoubleFilters["hltEle16Ele12Ele8CaloIdLTrackIdLDphiLeg1Filter"]                    = 9;
     eleDoubleFilters["hltEle16Ele12Ele8CaloIdLTrackIdLDphiLeg2Filter"]                    = 10;
     eleDoubleFilters["hltEle16Ele12Ele8CaloIdLTrackIdLDphiLeg3Filter"]                    = 11;
+    ////// added from FSA
+    eleDoubleFilters["hltEle17CaloIdLCaloIsoVLPixelMatchFilterDoubleEG125"] = 12;
+    eleDoubleFilters["hltEle17CaloIdIsoEle8CaloIdIsoPixelMatchDoubleFilter"] = 13;
+    eleDoubleFilters["hltEle17CaloIdLCaloIsoVLPixelMatchFilter"] = 14;
+    eleDoubleFilters["hltEle8CaloIdLCaloIsoVLPixelMatchFilter"] = 15;
+    eleDoubleFilters["hltL1NonIsoHLTNonIsoMu17Ele8PixelMatchFilter"] = 16;
+    eleDoubleFilters["hltMu8Ele17CaloIdTCaloIsoVLPixelMatchFilter"] = 17;
+    eleDoubleFilters["hltL1NonIsoHLTNonIsoMu8Ele17PixelMatchFilter"] = 18;
+    eleDoubleFilters["hltMu17Ele8CaloIdTPixelMatchFilter"] = 19;
+    /////////
 
+
+
+   
     muFilters["hltL3crIsoL1sMu20L1f0L2f10QL3f22QL3trkIsoFiltered0p09"] = 0; //HLT_IsoMu22_v2
     muFilters["hltL3crIsoL1sMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p09"] = 1; //HLT_IsoMu24_v1
     muFilters["hltL3fL1sL1Mu5IsoEG18L1f5L2f7L3Filtered17"] = 2; //HLT_Mu17_Photon*  muon
@@ -181,7 +224,31 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
     muFilters["hltL3crIsoL1sSingleMu22L1f0L2f10QL3f24QL3trkIsoFiltered0p07"] = 30; //HLT_IsoMu24 (2017)
     muFilters["hltL3crIsoL1sMu22Or25L1f0L2f10QL3f27QL3trkIsoFiltered0p07"] = 31; //HLT_IsoMu27 (2017)
     muFilters["hltL3fL1sMu12Diphoton20L1f0L2f8QL3Filtered12"] = 32; //HLTMu12_DIPho20 (2017)
-
+    ////// added from FSA
+    muFilters["hltSingleMuIsoL3IsoFiltered12"] = 33;
+    muFilters["hltSingleMuIsoL3IsoFiltered15"] = 34;
+    muFilters["hltSingleMuIsoL3IsoFiltered24"] = 35;
+    muFilters["hltDiMuonL3PreFiltered8"] = 36;
+    muFilters["hltDiMuonL3PreFiltered7"] = 37;
+    muFilters["hltOverlapFilterIsoMu15IsoPFTau15"] = 38;
+    muFilters["hltL1Mu3EG5L3Filtered17"] = 39;
+    muFilters["hltL1Mu7EG5L3MuFiltered17"] = 40;
+    muFilters["hltL1MuOpenEG12L3Filtered8"] = 41;
+    muFilters["hltL1MuOpenEG5L3Filtered8"] = 42;
+    muFilters["hltL1MuOpenEG8L3Filtered8"] = 43;
+    muFilters["hltL1Mu3EG5L3Filtered8"] = 44;
+    muFilters["hltOverlapFilterIsoMu12IsoPFTau10"] = 45;
+    muFilters["hltSingleMuIsoL3IsoFiltered17"] = 46;
+    muFilters["hltSingleMuL2QualIsoL3IsoFiltered17"] = 47;
+    muFilters["hltSingleMuL2QualIsoL3IsoFiltered24"] = 48;
+    muFilters["hltSingleMu13L3Filtered13"] = 49;
+    muFilters["hltSingleMuIsoL1s14L3IsoFiltered15eta2p1"] = 50;
+    muFilters["hltL3IsoL1sMu14Eta2p1L1f0L2f14QL2IsoL3f24L3IsoFiltered"] = 51;
+    muFilters["hltDiMuonL3p5PreFiltered8"] = 52;
+    muFilters["hltSingleMu13L3Filtered17"] = 53;
+    muFilters["hltL3crIsoL1sMu16Eta2p1L1f0L2f16QL3f18QL3crIsoFiltered10"] = 54;
+    muFilters["hltL3crIsoL1sMu16Eta2p1L1f0L2f16QL3f24QL3crIsoFiltered10"] = 55;
+    ///////
     phoSingleFilters["hltEG33L1EG26HEFilter"]                = 0;
     phoSingleFilters["hltEG50HEFilter"]                      = 1;
     phoSingleFilters["hltEG75HEFilter"]                      = 2;
@@ -264,6 +331,28 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
     phoTripleFilters["hltDiEG35CaloIdLV2R9IdVLEtUnseededFilter"]             = 14; //2nd leg UnSeeded_35 of TriplePho35_35_5_Calo_R9
     phoTripleFilters["hltDiEG35TriEG5CaloIdLV2R9IdVLEtUnseededFilter"]       = 15; //3 legs of TriplePho35_35_5_Calo_R9 (last filter)
     
+
+    ///////////  added from FSA
+    tauFilters["hltFilterDoubleIsoPFTau20Trk5LeadTrack5IsolationL1HLTMatched"] = 0;
+    tauFilters["hltFilterDoubleIsoPFTau35Trk5LeadTrack5IsolationL1HLTMatched"] = 1;
+    tauFilters["hltOverlapFilterIsoMu15IsoPFTau15"] = 2;
+    tauFilters["hltOverlapFilterIsoMu15IsoPFTau20"] = 3;
+    tauFilters["hltOverlapFilterIsoMu15MediumIsoPFTau20"] = 4;
+    tauFilters["hltOverlapFilterIsoMu15TightIsoPFTau20"] = 5;
+    tauFilters["hltOverlapFilterMu15IsoPFTau20"] = 6;
+    tauFilters["hltOverlapFilterIsoMu12IsoPFTau10"] = 7;
+    tauFilters["hltOverlapFilterIsoEle15IsoPFTau20"] = 8;
+    tauFilters["hltOverlapFilterIsoEle15IsoPFTau15"] = 9;
+    tauFilters["hltOverlapFilterIsoEle15TightIsoPFTau20"] = 10;
+    tauFilters["hltOverlapFilterIsoEle18MediumIsoPFTau20"] = 11;
+    tauFilters["hltOverlapFilterIsoEle20MediumIsoPFTau20"] = 12;
+    tauFilters["hltFilterDoubleIsoPFTau20Trk5LeadTrack5IsolationL1HLTMatched"] = 13;
+    tauFilters["hltPFTauMediumIso20TrackMediumIso"] = 14;
+    tauFilters["hltPFTau15TrackLooseIso"] = 15;
+    tauFilters["hltPFTau20TrackLooseIso"] = 16;
+    tauFilters["hltPFTauTightIso20TrackTightIso"] = 17;
+    ////////
+    
     jetFilters["hltSinglePFJet40"]  =  0;
     jetFilters["hltSinglePFJet60"]  =  1;
     jetFilters["hltSinglePFJet80"]  =  2;
@@ -338,6 +427,7 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
       std::map<string,size_t>::iterator idxPhoDouble = phoDoubleFilters.find(label);
       std::map<string,size_t>::iterator idxPhoTriple = phoTripleFilters.find(label);
       std::map<string,size_t>::iterator idxMu  = muFilters.find(label);
+      std::map<string,size_t>::iterator idxTau = tauFilters.find(label);
       std::map<string,size_t>::iterator idxJet = jetFilters.find(label);
       std::map<string,size_t>::iterator idxL1 = l1Filters.find(label);
 
@@ -388,6 +478,14 @@ void phoJetNtuplizer::initTriggerFilters(const edm::Event &e) {
         trgMuPt [idx].push_back(obj.pt());
         trgMuEta[idx].push_back(obj.eta());
         trgMuPhi[idx].push_back(obj.phi());
+      }
+      
+      // tau filters
+      if (idxTau != tauFilters.end()) {
+        size_t idx = idxTau->second;
+        trgTauPt [idx].push_back(obj.pt());
+        trgTauEta[idx].push_back(obj.eta());
+        trgTauPhi[idx].push_back(obj.phi());
       }
 
       // jet filters
@@ -506,7 +604,21 @@ ULong64_t phoJetNtuplizer::matchMuonTriggerFilters(double pt, double eta, double
 
   return result;
 }
+ULong64_t phoJetNtuplizer::matchTauTriggerFilters(double pt, double eta, double phi) {
 
+  // bits in the return value correspond to decisions from filters defined above
+  ULong64_t result = 0;
+
+  for (size_t f = 0; f < 64; ++f)
+    for (size_t v = 0; v < trgTauPt[f].size(); ++v)
+      if (fabs(pt - trgTauPt[f][v])/trgTauPt[f][v] < trgFilterDeltaPtCut_ &&
+          deltaR(eta, phi, trgTauEta[f][v], trgTauPhi[f][v]) < trgFilterDeltaRCut_) {
+        result |= (1<<f);
+        break;
+      }
+
+  return result;
+}
 ULong64_t phoJetNtuplizer::matchJetTriggerFilters(double pt, double eta, double phi) {
 
   // bits in the return value correspond to decisions from filters defined above
